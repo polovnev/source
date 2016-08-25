@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>Task_9</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<servlet-name>SimpleCaptcha</servlet-name>
+		<servlet-class>com.epam.polovnev.servlet.SimpleCaptchaServlet</servlet-class>
+		<init-param>
+			<param-name>captcha-width</param-name>
+			<param-value>180</param-value>
+		</init-param>
+		<init-param>
+			<param-name>captcha-height</param-name>
+			<param-value>80</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SimpleCaptcha</servlet-name>
+		<url-pattern>/captcha</url-pattern>
+	</servlet-mapping>
+	<context-param>
+		<param-name>isCaptchaStoredInSession</param-name>
+		<param-value>false</param-value>
+	</context-param>
+	<context-param>
+		<param-name>timeForSession</param-name>
+		<param-value>10000</param-value>
+	</context-param>
+</web-app>
